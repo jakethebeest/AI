@@ -13,12 +13,14 @@ let space=true;
 let array=[["1"],[["2"]],[[["1"]],[["2"],[["1"]]]]];
 let testmem;
 let array2=[["1"],[["2"]],[[["1"]],[["2"],[["1"]]]]];
+let t;
 function setup(){
+	t=new thinking();
 	createCanvas(600,600);
 	a=new AI(amount,1800);
 	a.randomconnect();
-	frameRate(20);
-	s= new snake(6,6);
+	frameRate(60);
+	s= new snake(120,120);
 	background(0,0,255);
 	textSize(30);
 	testmem=new memory();
@@ -38,12 +40,15 @@ function setup(){
 	testmem.store("down");
 	testmem.store("left");
 	testmem.store("right");
+	t.happieness=11;
 }
 
 
 function draw(){
-	
-	
+	//t.satifactionrules();
+	//print(t.satifaction);
+	//print(t.happieness);
+	//print(t.wellbeing);
 //	print(testmem.mainmem);
 //	print(testmem.shortterm);
 	
@@ -65,7 +70,7 @@ background(0);
 	testmem.sleep();	
 		a.punish(.2);
 		last=s.score;
-		s=new snake(6,6);
+		s=new snake(120,120);
 		s.pause=false;
 		//c=0;
 		gen++;
@@ -97,11 +102,7 @@ print(gen);
 	//background(random(105));
 	
 
- function drawsqare(){
-	 fill(random(255),random(255),random(255));
-	rect(200,200,20,20);
-	
-}
+
 function keyPressed(){
 	if(key=="q"){a.punish()}
 	if(key=="e"){a.reward()}
