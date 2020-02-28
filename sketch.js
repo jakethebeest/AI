@@ -45,6 +45,7 @@ function setup(){
 
 
 function draw(){
+	print(keyIsPressed);
 	//t.satifactionrules();
 	//print(t.satifaction);
 	//print(t.happieness);

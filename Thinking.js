@@ -7,7 +7,8 @@ class thinking{
 		this.thoughts="";
 		this.memory=new memory();
 	this.input;
-	//goal maximize happieness.
+	
+	
 	}
 	think(){
 		
